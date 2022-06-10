@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Upload Page";
+}
+
+<div class="text-center h-300 d-flex align-items-center justify-content-center">
+    @using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype="multipart/form-data", id = "UploadForm" }))
+    {
+        <div class="input-group">
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" name="file" id="inputGroupFile02" aria-describedby="file">
+                <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+            </div>
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="submit" >Submit</button>
+            </div>
+        </div>
+    }    
+</div>
+<div class="text-center">
+    @ViewData["Message"]
+</div>
